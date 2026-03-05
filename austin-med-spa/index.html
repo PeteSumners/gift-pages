@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Client Guide - Austin Med Spa</title>
+<title>Your First Visit - Austin Med Spa</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
 
@@ -55,30 +55,37 @@
   }
   .card p { font-size: 0.88rem; font-weight: 300; color: var(--text-light); margin-bottom: 0.5rem; }
 
-  .treatment-list { list-style: none; padding: 0; margin-top: 1rem; }
-  .treatment-list li {
-    display: block; padding: 1rem 0;
+  .step-list { list-style: none; padding: 0; }
+  .step-list li {
+    display: flex; gap: 1rem; padding: 0.85rem 0;
     border-bottom: 1px solid rgba(0,0,0,0.04);
-    font-size: 0.88rem; color: var(--text);
+    font-size: 0.88rem; font-weight: 300; color: var(--text);
   }
-  .treatment-list li:last-child { border-bottom: none; }
-  .treatment-name {
-    font-weight: 500; margin-bottom: 0.25rem;
-    color: var(--text); font-size: 0.9rem;
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blush); color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 500; flex-shrink: 0; margin-top: 0.1rem;
   }
-  .treatment-desc {
-    font-size: 0.82rem; color: var(--text-light);
-    font-weight: 300; margin-bottom: 0.4rem;
+
+  .timeline { list-style: none; padding: 0; }
+  .timeline li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
   }
-  .treatment-tags {
-    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  .timeline li:last-child { border-bottom: none; }
+  .time-badge {
+    background: var(--sage-bg); color: var(--sage);
+    padding: 0.15rem 0.5rem; border-radius: 8px;
+    font-size: 0.7rem; font-weight: 500; flex-shrink: 0;
+    height: fit-content; margin-top: 0.25rem;
+    white-space: nowrap;
   }
-  .tag {
-    background: var(--sage-bg); color: var(--text);
-    padding: 0.2rem 0.6rem; border-radius: 12px;
-    font-size: 0.7rem; font-weight: 400;
+  .time-desc {
+    font-size: 0.85rem; font-weight: 300; color: var(--text);
   }
-  .tag.downtime { background: var(--blush); }
+  .time-desc strong { font-weight: 500; }
 
   .tip-box {
     background: var(--sage-bg); border-radius: 12px;
@@ -87,6 +94,24 @@
   .tip-box p {
     font-size: 0.85rem; color: var(--text); margin-bottom: 0;
     font-style: italic;
+  }
+
+  .aftercare-grid {
+    display: grid; gap: 0.75rem; margin-top: 0.75rem;
+  }
+  .aftercare-item {
+    background: var(--cream); border-radius: 10px; padding: 1rem;
+  }
+  .aftercare-title {
+    font-weight: 500; margin-bottom: 0.25rem;
+    color: var(--text); font-size: 0.85rem;
+  }
+  .aftercare-do {
+    font-size: 0.8rem; color: var(--sage); font-weight: 400;
+    margin-bottom: 0.15rem;
+  }
+  .aftercare-avoid {
+    font-size: 0.8rem; color: var(--blush-deep); font-weight: 400;
   }
 
   .details-grid {
@@ -137,152 +162,97 @@
     text-align: center; padding: 2rem;
     font-size: 0.7rem; color: var(--text-light); font-weight: 300;
   }
-
-  .prep-grid {
-    display: grid; gap: 0.75rem; margin-top: 1rem;
-  }
-  .prep-item {
-    background: var(--cream); border-radius: 10px; padding: 1rem;
-  }
-  .prep-title {
-    font-weight: 500; margin-bottom: 0.3rem;
-    color: var(--text); font-size: 0.85rem;
-  }
-  .prep-desc {
-    font-size: 0.8rem; color: var(--text-light); font-weight: 300;
-  }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Treatment Quick Reference</h1>
-  <p>Everything you need to know about our most popular services</p>
+  <h1>Your First Visit Guide</h1>
+  <p>Everything you need to know before coming in</p>
 </div>
 
 <div class="card">
-  <div class="card-label">Injectables</div>
-  <h2>Botox & Fillers</h2>
-  <ul class="treatment-list">
+  <div class="card-label">Before You Arrive</div>
+  <h2>How to prepare</h2>
+  <ul class="step-list">
     <li>
-      <div class="treatment-name">Botox/Dysport</div>
-      <div class="treatment-desc">Softens lines from muscle movement — forehead, crow's feet, frown lines</div>
-      <div class="treatment-tags">
-        <span class="tag">10-15 mins</span>
-        <span class="tag downtime">No downtime</span>
-        <span class="tag">Results in 3-7 days</span>
-      </div>
+      <div class="step-num">1</div>
+      <div><strong>Come with a clean face</strong> — no makeup, sunscreen, or moisturizer. We'll cleanse again, but starting fresh helps.</div>
     </li>
     <li>
-      <div class="treatment-name">Lip Filler</div>
-      <div class="treatment-desc">Adds volume and shape to lips, can smooth lip lines</div>
-      <div class="treatment-tags">
-        <span class="tag">20-30 mins</span>
-        <span class="tag downtime">Swelling 1-3 days</span>
-        <span class="tag">Immediate results</span>
-      </div>
+      <div class="step-num">2</div>
+      <div><strong>Skip certain products</strong> — no retinol or exfoliants for 3 days before facials or peels. Stop blood thinners (aspirin, fish oil) 24 hours before injectables.</div>
     </li>
     <li>
-      <div class="treatment-name">Cheek/Jawline Filler</div>
-      <div class="treatment-desc">Restores volume, defines contours, smooths nasolabial folds</div>
-      <div class="treatment-tags">
-        <span class="tag">30-45 mins</span>
-        <span class="tag downtime">Minimal swelling</span>
-        <span class="tag">Immediate results</span>
-      </div>
+      <div class="step-num">3</div>
+      <div><strong>Eat something beforehand</strong> — especially for injectables. Low blood sugar can make you lightheaded.</div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div><strong>Bring your medication list</strong> — or just snap a photo of your bottles. We need to check for interactions.</div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div><strong>Have questions ready</strong> — write them down! It's easy to forget when you're in the room.</div>
     </li>
   </ul>
 </div>
 
 <div class="card">
-  <div class="card-label">Skin Treatments</div>
-  <h2>Facials & Peels</h2>
-  <ul class="treatment-list">
+  <div class="card-label">Day-of Timeline</div>
+  <h2>What to expect</h2>
+  <ul class="timeline">
     <li>
-      <div class="treatment-name">HydraFacial</div>
-      <div class="treatment-desc">Deep cleansing, exfoliation, and hydration — great for all skin types</div>
-      <div class="treatment-tags">
-        <span class="tag">30-45 mins</span>
-        <span class="tag downtime">No downtime</span>
-        <span class="tag">Immediate glow</span>
-      </div>
+      <span class="time-badge">Arrive</span>
+      <div class="time-desc"><strong>Check in at the front desk.</strong> Fill out intake forms (health history, allergies, current skincare). Takes about 10 minutes.</div>
     </li>
     <li>
-      <div class="treatment-name">Chemical Peel</div>
-      <div class="treatment-desc">Removes dead skin, reduces fine lines, evens skin tone</div>
-      <div class="treatment-tags">
-        <span class="tag">30 mins</span>
-        <span class="tag downtime">Peeling 3-7 days</span>
-        <span class="tag">Results in 1-2 weeks</span>
-      </div>
+      <span class="time-badge">Consult</span>
+      <div class="time-desc"><strong>Meet your provider.</strong> They'll assess your skin, discuss your goals, and recommend a plan. No pressure to commit to anything today.</div>
     </li>
     <li>
-      <div class="treatment-name">Microneedling</div>
-      <div class="treatment-desc">Stimulates collagen, improves texture, reduces acne scars</div>
-      <div class="treatment-tags">
-        <span class="tag">45-60 mins</span>
-        <span class="tag downtime">Red 1-2 days</span>
-        <span class="tag">Results in 4-6 weeks</span>
-      </div>
+      <span class="time-badge">Treat</span>
+      <div class="time-desc"><strong>Your treatment.</strong> Most services take 15-60 minutes. Numbing cream is available for injectables — just ask.</div>
+    </li>
+    <li>
+      <span class="time-badge">After</span>
+      <div class="time-desc"><strong>Aftercare instructions.</strong> We'll walk you through everything and give you a printed sheet to take home.</div>
     </li>
   </ul>
-</div>
-
-<div class="card">
-  <div class="card-label">Body Treatments</div>
-  <h2>Sculpting & Skin Tightening</h2>
-  <ul class="treatment-list">
-    <li>
-      <div class="treatment-name">CoolSculpting</div>
-      <div class="treatment-desc">Freezes fat cells to reduce stubborn areas like belly, thighs, arms</div>
-      <div class="treatment-tags">
-        <span class="tag">35-75 mins</span>
-        <span class="tag downtime">Mild soreness</span>
-        <span class="tag">Results in 2-3 months</span>
-      </div>
-    </li>
-    <li>
-      <div class="treatment-name">Laser Hair Removal</div>
-      <div class="treatment-desc">Permanent hair reduction for face and body</div>
-      <div class="treatment-tags">
-        <span class="tag">15-60 mins</span>
-        <span class="tag downtime">No downtime</span>
-        <span class="tag">Series of 6-8</span>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="card">
-  <div class="card-label">Pre-Treatment Prep</div>
-  <h2>What clients should know</h2>
-  <div class="prep-grid">
-    <div class="prep-item">
-      <div class="prep-title">24 Hours Before Injectables</div>
-      <div class="prep-desc">Avoid alcohol, aspirin, ibuprofen, fish oil, vitamin E</div>
-    </div>
-    <div class="prep-item">
-      <div class="prep-title">Day of Facials</div>
-      <div class="prep-desc">Come with clean skin, no retinoids for 3 days prior</div>
-    </div>
-    <div class="prep-item">
-      <div class="prep-title">Laser Appointments</div>
-      <div class="prep-desc">No sun exposure, no self-tanner for 2 weeks</div>
-    </div>
-    <div class="prep-item">
-      <div class="prep-title">CoolSculpting</div>
-      <div class="prep-desc">Eat normally, wear comfortable clothes</div>
-    </div>
-  </div>
   <div class="tip-box">
-    <p>
-      Always review medical history and medications. When in doubt, have them consult with the provider first.
-    </p>
+    <p>First-time consultations are complimentary. You don't have to do any treatment on your first visit if you'd rather think about it.</p>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-label">Contact Information</div>
+  <div class="card-label">Aftercare Basics</div>
+  <h2>The quick version</h2>
+  <div class="aftercare-grid">
+    <div class="aftercare-item">
+      <div class="aftercare-title">After Botox/Fillers</div>
+      <div class="aftercare-do">Do: stay upright 4 hours, ice gently</div>
+      <div class="aftercare-avoid">Avoid: exercise, alcohol, hot showers for 24 hrs</div>
+    </div>
+    <div class="aftercare-item">
+      <div class="aftercare-title">After Facials</div>
+      <div class="aftercare-do">Do: moisturize, use SPF 30+</div>
+      <div class="aftercare-avoid">Avoid: makeup for 12 hours, exfoliants for 48 hrs</div>
+    </div>
+    <div class="aftercare-item">
+      <div class="aftercare-title">After Peels</div>
+      <div class="aftercare-do">Do: keep skin hydrated, let it peel naturally</div>
+      <div class="aftercare-avoid">Avoid: picking, sun exposure, retinol for 1 week</div>
+    </div>
+    <div class="aftercare-item">
+      <div class="aftercare-title">After Laser</div>
+      <div class="aftercare-do">Do: apply aloe, wear loose clothing over area</div>
+      <div class="aftercare-avoid">Avoid: sun, hot water, deodorant on treated area 48 hrs</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Getting Here</div>
   <h2>Austin Med Spa</h2>
   <div class="details-grid">
     <div class="detail">
@@ -290,12 +260,20 @@
       <div class="detail-label">Austin, TX 78703</div>
     </div>
     <div class="detail">
-      <div class="detail-value">4.9★</div>
-      <div class="detail-label">195 reviews</div>
+      <div class="detail-value">4.9 stars</div>
+      <div class="detail-label">195 Google reviews</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">Free Parking</div>
+      <div class="detail-label">On-site lot</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">(512) 479-9997</div>
+      <div class="detail-label">Main line</div>
     </div>
   </div>
   <a class="map-link" href="https://maps.google.com/?q=1611+W+6th+St+Austin+TX+78703">Open in Maps</a>
-  <a class="call-link" href="tel:+15124799997">(512) 479-9997</a>
+  <a class="call-link" href="tel:+15124799997">Call to Book</a>
 </div>
 
 <div class="demo-section">
