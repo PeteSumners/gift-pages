@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Front Desk Quick Reference - Rejuvenate Austin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --blush: #E8D5D0;
+    --blush-deep: #C4A095;
+    --cream: #FAF7F2;
+    --warm: #FFFDF9;
+    --text: #3D3D3D;
+    --text-light: #7A7A7A;
+    --sage: #8FAE8B;
+    --sage-bg: #EEF4ED;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream); color: var(--text);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    max-width: 480px; margin: 0 auto;
+  }
+
+  .header {
+    text-align: center; padding: 3rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--warm), var(--cream));
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .header p {
+    font-size: 0.9rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .card {
+    background: var(--warm); margin: 1rem 1.25rem;
+    border-radius: 16px; padding: 1.75rem;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .card-label {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blush-deep); margin-bottom: 0.75rem;
+  }
+  .card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .card p { font-size: 0.88rem; font-weight: 300; color: var(--text-light); margin-bottom: 0.5rem; }
+
+  .treatment-list { list-style: none; padding: 0; }
+  .treatment-list li {
+    padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .treatment-list li:last-child { border-bottom: none; }
+  .treatment-name {
+    font-weight: 500; color: var(--text); font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .treatment-desc {
+    font-size: 0.82rem; color: var(--text-light); font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+  .treatment-details {
+    display: flex; gap: 1rem; font-size: 0.75rem;
+    color: var(--blush-deep); font-weight: 400;
+  }
+
+  .tip-box {
+    background: var(--sage-bg); border-radius: 12px;
+    padding: 1.25rem; margin-top: 1rem;
+  }
+  .tip-box p {
+    font-size: 0.85rem; color: var(--text); margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .tip-box p:last-child { margin-bottom: 0; }
+
+  .quick-refs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .quick-ref {
+    background: var(--cream); border-radius: 10px; padding: 1rem;
+    text-align: center;
+  }
+  .quick-ref-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--text);
+  }
+  .quick-ref-label {
+    font-size: 0.65rem; color: var(--text-light); font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+
+  .map-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--blush); color: var(--text); text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 400;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .map-link:active { opacity: 0.8; }
+
+  .call-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--sage); color: white; text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 500;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .call-link:active { opacity: 0.8; }
+
+  .demo-section {
+    background: rgba(138, 174, 139, 0.1); margin: 1rem 1.25rem;
+    border-radius: 12px; padding: 1.25rem; text-align: center;
+    border: 1px solid rgba(138, 174, 139, 0.2);
+  }
+  .demo-section p {
+    font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.75rem;
+  }
+  .demo-link {
+    display: inline-block; padding: 0.6rem 1.2rem;
+    background: var(--sage); color: white; text-decoration: none;
+    border-radius: 8px; font-size: 0.8rem; font-weight: 400;
+    transition: opacity 0.2s;
+  }
+  .demo-link:active { opacity: 0.8; }
+
+  .footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.7rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .concern-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .concern-item {
+    background: var(--cream); border-radius: 8px; padding: 0.75rem;
+    font-size: 0.8rem; color: var(--text); text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Treatment Quick Reference</h1>
+  <p>Your go-to guide for answering client questions</p>
+</div>
+
+<div class="card">
+  <div class="card-label">Popular Treatments</div>
+  <h2>What clients ask about most</h2>
+  <ul class="treatment-list">
+    <li>
+      <div class="treatment-name">Botox & Dysport</div>
+      <div class="treatment-desc">Smooths forehead lines, crow's feet, frown lines</div>
+      <div class="treatment-details">
+        <span>15-20 min</span>
+        <span>No downtime</span>
+        <span>Results in 3-7 days</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Dermal Fillers</div>
+      <div class="treatment-desc">Adds volume to lips, cheeks, under-eyes</div>
+      <div class="treatment-details">
+        <span>30-45 min</span>
+        <span>Minor swelling 2-3 days</span>
+        <span>Immediate results</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">HydraFacial</div>
+      <div class="treatment-desc">Deep cleansing, extractions, hydration boost</div>
+      <div class="treatment-details">
+        <span>30 min</span>
+        <span>Zero downtime</span>
+        <span>Glowing skin immediately</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Microneedling</div>
+      <div class="treatment-desc">Improves texture, scars, fine lines</div>
+      <div class="treatment-details">
+        <span>60 min</span>
+        <span>Red 1-2 days</span>
+        <span>Results in 4-6 weeks</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Chemical Peels</div>
+      <div class="treatment-desc">Brightens skin, reduces pigmentation</div>
+      <div class="treatment-details">
+        <span>30-45 min</span>
+        <span>Peeling 3-7 days</span>
+        <span>Smoother skin after peeling</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Common Questions</div>
+  <h2>Quick answers for the front desk</h2>
+  <div class="tip-box">
+    <p><strong>"Does it hurt?"</strong> Most treatments feel like tiny pinches. We use topical numbing for comfort.</p>
+    <p><strong>"When will I see results?"</strong> Botox: 3-7 days. Fillers: immediate. Facials: right away. Peels: after peeling stops.</p>
+    <p><strong>"Can I work out after?"</strong> No heavy exercise same day for injectables. Facials and peels are fine.</p>
+    <p><strong>"What's the cancellation policy?"</strong> 24 hours notice to avoid charges.</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Skin Concerns</div>
+  <h2>Match treatments to concerns</h2>
+  <p>When clients aren't sure what they need:</p>
+  <div class="concern-grid">
+    <div class="concern-item">Wrinkles → Botox</div>
+    <div class="concern-item">Volume Loss → Fillers</div>
+    <div class="concern-item">Dull Skin → HydraFacial</div>
+    <div class="concern-item">Acne Scars → Microneedling</div>
+    <div class="concern-item">Dark Spots → Chemical Peel</div>
+    <div class="concern-item">Fine Lines → Microneedling</div>
+  </div>
+  <div class="tip-box">
+    <p>When in doubt: "Let's start with a consultation. Dr. Wright will look at your skin and recommend exactly what you need — no pressure to decide today."</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Contact Info</div>
+  <h2>Quick reference</h2>
+  <div class="quick-refs">
+    <div class="quick-ref">
+      <div class="quick-ref-value">1301 W 5th St</div>
+      <div class="quick-ref-label">Suite 100</div>
+    </div>
+    <div class="quick-ref">
+      <div class="quick-ref-value">(512) 923-1071</div>
+      <div class="quick-ref-label">Main Line</div>
+    </div>
+    <div class="quick-ref">
+      <div class="quick-ref-value">Free Parking</div>
+      <div class="quick-ref-label">Behind Building</div>
+    </div>
+    <div class="quick-ref">
+      <div class="quick-ref-value">4.8 Stars</div>
+      <div class="quick-ref-label">208 Reviews</div>
+    </div>
+  </div>
+  <a class="map-link" href="https://maps.google.com/?q=1301+W+5th+St+Suite+100+Austin+TX+78703">Open in Maps</a>
+  <a class="call-link" href="tel:+15129231071">Call Main Line</a>
+</div>
+
+<div class="demo-section">
+  <p>Curious about AI? Try calling our demo receptionist — just for fun!</p>
+  <a class="demo-link" href="tel:+15129420867">(512) 942-0867</a>
+</div>
+
+<div class="footer">
+  Made with care for Rejuvenate Austin
+</div>
+
+</body>
+</html>

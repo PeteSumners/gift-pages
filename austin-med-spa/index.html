@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Client Guide - Austin Med Spa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --blush: #E8D5D0;
+    --blush-deep: #C4A095;
+    --cream: #FAF7F2;
+    --warm: #FFFDF9;
+    --text: #3D3D3D;
+    --text-light: #7A7A7A;
+    --sage: #8FAE8B;
+    --sage-bg: #EEF4ED;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream); color: var(--text);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    max-width: 480px; margin: 0 auto;
+  }
+
+  .header {
+    text-align: center; padding: 3rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--warm), var(--cream));
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .header p {
+    font-size: 0.9rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .card {
+    background: var(--warm); margin: 1rem 1.25rem;
+    border-radius: 16px; padding: 1.75rem;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .card-label {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blush-deep); margin-bottom: 0.75rem;
+  }
+  .card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .card p { font-size: 0.88rem; font-weight: 300; color: var(--text-light); margin-bottom: 0.5rem; }
+
+  .treatment-list { list-style: none; padding: 0; margin-top: 1rem; }
+  .treatment-list li {
+    display: block; padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 0.88rem; color: var(--text);
+  }
+  .treatment-list li:last-child { border-bottom: none; }
+  .treatment-name {
+    font-weight: 500; margin-bottom: 0.25rem;
+    color: var(--text); font-size: 0.9rem;
+  }
+  .treatment-desc {
+    font-size: 0.82rem; color: var(--text-light);
+    font-weight: 300; margin-bottom: 0.4rem;
+  }
+  .treatment-tags {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--sage-bg); color: var(--text);
+    padding: 0.2rem 0.6rem; border-radius: 12px;
+    font-size: 0.7rem; font-weight: 400;
+  }
+  .tag.downtime { background: var(--blush); }
+
+  .tip-box {
+    background: var(--sage-bg); border-radius: 12px;
+    padding: 1.25rem; margin-top: 1rem;
+  }
+  .tip-box p {
+    font-size: 0.85rem; color: var(--text); margin-bottom: 0;
+    font-style: italic;
+  }
+
+  .details-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .detail {
+    background: var(--cream); border-radius: 10px; padding: 1rem;
+    text-align: center;
+  }
+  .detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--text);
+  }
+  .detail-label {
+    font-size: 0.65rem; color: var(--text-light); font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+
+  .map-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--blush); color: var(--text); text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 400;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .map-link:active { opacity: 0.8; }
+
+  .call-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--sage); color: white; text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 500;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .call-link:active { opacity: 0.8; }
+
+  .demo-section {
+    text-align: center; padding: 1.5rem 2rem;
+    color: var(--text-light); font-size: 0.8rem;
+  }
+  .demo-section p {
+    margin-bottom: 0.5rem; font-weight: 300;
+  }
+  .demo-link {
+    color: var(--sage); text-decoration: none; font-weight: 400;
+  }
+
+  .footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.7rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .prep-grid {
+    display: grid; gap: 0.75rem; margin-top: 1rem;
+  }
+  .prep-item {
+    background: var(--cream); border-radius: 10px; padding: 1rem;
+  }
+  .prep-title {
+    font-weight: 500; margin-bottom: 0.3rem;
+    color: var(--text); font-size: 0.85rem;
+  }
+  .prep-desc {
+    font-size: 0.8rem; color: var(--text-light); font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Treatment Quick Reference</h1>
+  <p>Everything you need to know about our most popular services</p>
+</div>
+
+<div class="card">
+  <div class="card-label">Injectables</div>
+  <h2>Botox & Fillers</h2>
+  <ul class="treatment-list">
+    <li>
+      <div class="treatment-name">Botox/Dysport</div>
+      <div class="treatment-desc">Softens lines from muscle movement — forehead, crow's feet, frown lines</div>
+      <div class="treatment-tags">
+        <span class="tag">10-15 mins</span>
+        <span class="tag downtime">No downtime</span>
+        <span class="tag">Results in 3-7 days</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Lip Filler</div>
+      <div class="treatment-desc">Adds volume and shape to lips, can smooth lip lines</div>
+      <div class="treatment-tags">
+        <span class="tag">20-30 mins</span>
+        <span class="tag downtime">Swelling 1-3 days</span>
+        <span class="tag">Immediate results</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Cheek/Jawline Filler</div>
+      <div class="treatment-desc">Restores volume, defines contours, smooths nasolabial folds</div>
+      <div class="treatment-tags">
+        <span class="tag">30-45 mins</span>
+        <span class="tag downtime">Minimal swelling</span>
+        <span class="tag">Immediate results</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Skin Treatments</div>
+  <h2>Facials & Peels</h2>
+  <ul class="treatment-list">
+    <li>
+      <div class="treatment-name">HydraFacial</div>
+      <div class="treatment-desc">Deep cleansing, exfoliation, and hydration — great for all skin types</div>
+      <div class="treatment-tags">
+        <span class="tag">30-45 mins</span>
+        <span class="tag downtime">No downtime</span>
+        <span class="tag">Immediate glow</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Chemical Peel</div>
+      <div class="treatment-desc">Removes dead skin, reduces fine lines, evens skin tone</div>
+      <div class="treatment-tags">
+        <span class="tag">30 mins</span>
+        <span class="tag downtime">Peeling 3-7 days</span>
+        <span class="tag">Results in 1-2 weeks</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Microneedling</div>
+      <div class="treatment-desc">Stimulates collagen, improves texture, reduces acne scars</div>
+      <div class="treatment-tags">
+        <span class="tag">45-60 mins</span>
+        <span class="tag downtime">Red 1-2 days</span>
+        <span class="tag">Results in 4-6 weeks</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Body Treatments</div>
+  <h2>Sculpting & Skin Tightening</h2>
+  <ul class="treatment-list">
+    <li>
+      <div class="treatment-name">CoolSculpting</div>
+      <div class="treatment-desc">Freezes fat cells to reduce stubborn areas like belly, thighs, arms</div>
+      <div class="treatment-tags">
+        <span class="tag">35-75 mins</span>
+        <span class="tag downtime">Mild soreness</span>
+        <span class="tag">Results in 2-3 months</span>
+      </div>
+    </li>
+    <li>
+      <div class="treatment-name">Laser Hair Removal</div>
+      <div class="treatment-desc">Permanent hair reduction for face and body</div>
+      <div class="treatment-tags">
+        <span class="tag">15-60 mins</span>
+        <span class="tag downtime">No downtime</span>
+        <span class="tag">Series of 6-8</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Pre-Treatment Prep</div>
+  <h2>What clients should know</h2>
+  <div class="prep-grid">
+    <div class="prep-item">
+      <div class="prep-title">24 Hours Before Injectables</div>
+      <div class="prep-desc">Avoid alcohol, aspirin, ibuprofen, fish oil, vitamin E</div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-title">Day of Facials</div>
+      <div class="prep-desc">Come with clean skin, no retinoids for 3 days prior</div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-title">Laser Appointments</div>
+      <div class="prep-desc">No sun exposure, no self-tanner for 2 weeks</div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-title">CoolSculpting</div>
+      <div class="prep-desc">Eat normally, wear comfortable clothes</div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <p>
+      Always review medical history and medications. When in doubt, have them consult with the provider first.
+    </p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Contact Information</div>
+  <h2>Austin Med Spa</h2>
+  <div class="details-grid">
+    <div class="detail">
+      <div class="detail-value">1611 W 6th St</div>
+      <div class="detail-label">Austin, TX 78703</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">4.9★</div>
+      <div class="detail-label">195 reviews</div>
+    </div>
+  </div>
+  <a class="map-link" href="https://maps.google.com/?q=1611+W+6th+St+Austin+TX+78703">Open in Maps</a>
+  <a class="call-link" href="tel:+15124799997">(512) 479-9997</a>
+</div>
+
+<div class="demo-section">
+  <p>Curious about AI? Try calling our demo receptionist:</p>
+  <a class="demo-link" href="tel:+15129420867">(512) 942-0867</a>
+  <p>We built this just to see what's possible</p>
+</div>
+
+<div class="footer">
+  Made with care for Austin Med Spa
+</div>
+
+</body>
+</html>

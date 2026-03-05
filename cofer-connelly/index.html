@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Welcome to Cofer & Connelly</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --navy: #1B365D;
+    --warm-gray: #F5F3F0;
+    --gold: #C4A265;
+    --cream: #FFFDF8;
+    --text: #2D2D2D;
+    --text-light: #6B6B6B;
+    --navy-light: #E8EDF3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-gray); color: var(--text);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    max-width: 480px; margin: 0 auto;
+  }
+
+  .header {
+    text-align: center; padding: 3rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--cream), var(--warm-gray));
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 400; color: var(--navy);
+    margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .header p {
+    font-size: 0.9rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .card {
+    background: var(--cream); margin: 1rem 1.25rem;
+    border-radius: 16px; padding: 1.75rem;
+    border: 1px solid rgba(27,54,93,0.06);
+  }
+  .card-label {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+  .card p { 
+    font-size: 0.88rem; font-weight: 300; color: var(--text); 
+    margin-bottom: 0.75rem; 
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(27,54,93,0.06);
+    font-size: 0.88rem; font-weight: 300; color: var(--text);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-icon {
+    width: 20px; height: 20px; border-radius: 4px;
+    background: var(--gold); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 500; flex-shrink: 0; margin-top: 0.1rem;
+  }
+
+  .step-list { list-style: none; padding: 0; }
+  .step-list li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(27,54,93,0.06);
+    font-size: 0.88rem; font-weight: 300; color: var(--text);
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--navy-light); color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 500; flex-shrink: 0; margin-top: 0.1rem;
+  }
+
+  .tip-box {
+    background: var(--navy-light); border-radius: 12px;
+    padding: 1.25rem; margin-top: 1rem;
+  }
+  .tip-box p {
+    font-size: 0.85rem; color: var(--navy); margin-bottom: 0;
+    font-weight: 400;
+  }
+
+  .details-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .detail {
+    background: var(--warm-gray); border-radius: 10px; padding: 1rem;
+    text-align: center;
+  }
+  .detail-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--navy);
+    line-height: 1.3;
+  }
+  .detail-label {
+    font-size: 0.65rem; color: var(--text-light); font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem;
+  }
+
+  .map-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--gold); color: white; text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 400;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .map-link:active { opacity: 0.8; }
+
+  .call-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--navy); color: white; text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 500;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .call-link:active { opacity: 0.8; }
+
+  .demo-section {
+    background: var(--warm-gray); margin: 2rem 1.25rem 1rem;
+    border-radius: 12px; padding: 1.5rem; text-align: center;
+    border: 1px solid rgba(27,54,93,0.04);
+  }
+  .demo-section p {
+    font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.75rem;
+  }
+  .demo-link {
+    display: inline-block; padding: 0.75rem 1.25rem;
+    background: rgba(27,54,93,0.08); color: var(--navy); text-decoration: none;
+    border-radius: 8px; font-size: 0.8rem; font-weight: 400;
+    transition: opacity 0.2s;
+  }
+  .demo-link:active { opacity: 0.8; }
+
+  .footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.7rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .highlight {
+    background: rgba(196,162,101,0.1);
+    padding: 0.1rem 0.3rem; border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Cofer & Connelly</h1>
+  <p>Essential reference guide for your front desk</p>
+</div>
+
+<div class="card">
+  <div class="card-label">First Call Essentials</div>
+  <h2>What to gather upfront</h2>
+  <ul class="checklist">
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Nature of charges</strong> — Criminal or family matter? Get specific charge names if possible.</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Court date</strong> — When is their next appearance? This determines urgency.</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>County & court</strong> — Travis, Williamson, Hays? Which court specifically?</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Best callback time</strong> — When can attorneys actually reach them?</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Current custody</strong> — Are they in jail? Out on bond? This affects scheduling.</div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Consultation Preparation</div>
+  <h2>What clients should bring</h2>
+  <p>Save time by letting clients know what to gather before they come in:</p>
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div><strong>All paperwork</strong> — Citations, arrest records, court documents, protective orders</div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div><strong>Timeline of events</strong> — Written summary of what happened and when</div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div><strong>Contact info</strong> — Names and numbers for any witnesses</div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div><strong>Financial records</strong> — For family cases: pay stubs, tax returns, bank statements</div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div><strong>Photo ID & insurance card</strong> — For intake forms and records</div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Scheduling Smart</div>
+  <h2>Triage by urgency</h2>
+  <p><span class="highlight">Court date within 7 days</span> — Priority scheduling, same or next day if possible</p>
+  <p><span class="highlight">Active warrant</span> — Urgent, needs immediate attorney consultation</p>
+  <p><span class="highlight">Emergency protective order</span> — Time-sensitive, affects housing and children</p>
+  <p><span class="highlight">Child custody dispute</span> — Schedule within 48 hours if children's safety is involved</p>
+  <div class="tip-box">
+    <p>
+      <strong>Pro tip:</strong> If someone calls crying or extremely panicked, 
+      get their callback number first — before gathering details. 
+      Sometimes they hang up and you've lost them.
+    </p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Common Questions & Quick Answers</div>
+  <h2>Save yourself time</h2>
+  <p><strong>"How much will this cost?"</strong><br>
+  "Attorney fees vary by case complexity. We'll discuss all costs upfront during your consultation — no surprises."</p>
+  
+  <p><strong>"Can you guarantee the outcome?"</strong><br>
+  "No ethical attorney can guarantee results, but we can explain likely scenarios based on our experience with similar cases."</p>
+  
+  <p><strong>"Do I really need a lawyer?"</strong><br>
+  "Criminal charges and family court have lasting consequences. A consultation helps you understand your options."</p>
+  
+  <p><strong>"My court date is tomorrow!"</strong><br>
+  "We handle urgent cases. Let me check the attorney's immediate availability and we'll figure this out."</p>
+</div>
+
+<div class="card">
+  <div class="card-label">Office Details</div>
+  <h2>The practical stuff</h2>
+  <div class="details-grid">
+    <div class="detail">
+      <div class="detail-value">602 W 11th St</div>
+      <div class="detail-label">Austin, TX 78701</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">(512) 991-0576</div>
+      <div class="detail-label">Main line</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">4.9 stars</div>
+      <div class="detail-label">430 Google reviews</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">Free parking</div>
+      <div class="detail-label">Street & nearby lots</div>
+    </div>
+  </div>
+  <a class="map-link" href="https://maps.google.com/?q=602+W+11th+St+Austin+TX+78701">Open in Maps</a>
+  <a class="call-link" href="tel:+15129910576">Call Office</a>
+</div>
+
+<div class="demo-section">
+  <p>Curious about AI? Try calling our demo receptionist — we built this just to see what's possible</p>
+  <a class="demo-link" href="tel:+15129420867">(512) 942-0867</a>
+</div>
+
+<div class="footer">
+  Made with care for Cofer & Connelly - Austin Criminal Defense & Family Lawyer
+</div>
+
+</body>
+</html>

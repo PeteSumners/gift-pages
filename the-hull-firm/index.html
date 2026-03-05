@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Welcome to The Hull Firm</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --navy: #1B365D;
+    --warm-gray: #F5F3F0;
+    --gold: #C4A265;
+    --cream: #FFFDF8;
+    --text: #2C3E50;
+    --text-light: #6C7B7F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-gray); color: var(--text);
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    max-width: 480px; margin: 0 auto;
+  }
+
+  .header {
+    text-align: center; padding: 3rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--cream), var(--warm-gray));
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 500; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .header p {
+    font-size: 0.9rem; color: var(--text-light); font-weight: 300;
+  }
+
+  .card {
+    background: var(--cream); margin: 1rem 1.25rem;
+    border-radius: 16px; padding: 1.75rem;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .card-label {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+  .card p { font-size: 0.88rem; font-weight: 300; color: var(--text); margin-bottom: 0.5rem; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 0.88rem; font-weight: 300; color: var(--text);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-icon {
+    width: 20px; height: 20px; border-radius: 3px;
+    background: var(--gold); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; flex-shrink: 0; margin-top: 0.2rem;
+  }
+
+  .step-list { list-style: none; padding: 0; }
+  .step-list li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 0.88rem; font-weight: 300; color: var(--text);
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--navy); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 500; flex-shrink: 0; margin-top: 0.1rem;
+  }
+
+  .tip-box {
+    background: rgba(196, 162, 101, 0.1); border-radius: 12px;
+    padding: 1.25rem; margin-top: 1rem; border-left: 4px solid var(--gold);
+  }
+  .tip-box p {
+    font-size: 0.85rem; color: var(--navy); margin-bottom: 0;
+    font-weight: 400;
+  }
+
+  .details-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .detail {
+    background: var(--warm-gray); border-radius: 10px; padding: 1rem;
+    text-align: center;
+  }
+  .detail-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--navy);
+  }
+  .detail-label {
+    font-size: 0.65rem; color: var(--text-light); font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+
+  .map-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--warm-gray); color: var(--navy); text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 400;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .map-link:active { opacity: 0.8; }
+
+  .call-link {
+    display: block; text-align: center; padding: 1rem;
+    background: var(--navy); color: white; text-decoration: none;
+    border-radius: 12px; font-size: 0.88rem; font-weight: 500;
+    margin-top: 0.75rem; transition: opacity 0.2s;
+  }
+  .call-link:active { opacity: 0.8; }
+
+  .demo-section {
+    margin: 1.5rem 1.25rem;
+    padding: 1.5rem; background: rgba(27, 54, 93, 0.05);
+    border-radius: 12px; text-align: center;
+  }
+  .demo-section p {
+    font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.75rem;
+  }
+  .demo-link {
+    display: inline-block; padding: 0.75rem 1.5rem;
+    background: var(--gold); color: white; text-decoration: none;
+    border-radius: 8px; font-size: 0.8rem; font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .demo-link:active { opacity: 0.8; }
+
+  .footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.7rem; color: var(--text-light); font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>The Hull Firm</h1>
+  <p>Your quick reference guide for helping clients through their DWI case.</p>
+</div>
+
+<div class="card">
+  <div class="card-label">When Someone Calls About a DWI</div>
+  <h2>What they need to know first</h2>
+  <ul class="checklist">
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Time is critical.</strong> They have only 15 days from arrest to request an Administrative License Revocation (ALR) hearing, or their license will be automatically suspended.</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Don't talk to police</strong> about the case without an attorney present. Anything they say can be used against them.</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Keep all paperwork</strong> from the arrest — citation, temporary license, bond papers, everything.</div>
+    </li>
+    <li>
+      <div class="check-icon">✓</div>
+      <div><strong>Document everything</strong> they remember about the arrest while it's fresh in their memory.</div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-label">Preparing for Their Consultation</div>
+  <h2>What to bring and expect</h2>
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div><strong>All arrest paperwork</strong> — citation, bond papers, temporary license, any receipts from jail</div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div><strong>Driver's license</strong> and insurance information</div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div><strong>Timeline of events</strong> — what they remember happening before, during, and after the stop</div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div><strong>Questions prepared</strong> — about the process, potential outcomes, and next steps</div>
+    </li>
+  </ul>
+  <div class="tip-box">
+    <p>
+      <strong>Remind them:</strong> The consultation is confidential. They should be completely honest about what happened — it helps the attorney build the best defense strategy.
+    </p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-label">Common Questions You'll Get</div>
+  <h2>Quick answers for worried callers</h2>
+  <p><strong>Q: "Will I go to jail?"</strong><br>
+  A: That depends on many factors. Mr. Hull will review their specific case and explain all possible outcomes during the consultation.</p>
+  
+  <p><strong>Q: "Can I still drive?"</strong><br>
+  A: They should have received a temporary license good for 40 days. After that, it depends on whether they requested the ALR hearing.</p>
+  
+  <p><strong>Q: "How much will this cost?"</strong><br>
+  A: Legal fees vary by case complexity. Mr. Hull discusses fees transparently during the consultation — no hidden costs.</p>
+  
+  <p><strong>Q: "What if this is my second DWI?"</strong><br>
+  A: Second offenses have more serious consequences, but there are still defense options. It's even more important to act quickly.</p>
+</div>
+
+<div class="card">
+  <div class="card-label">Firm Details</div>
+  <h2>Contact information</h2>
+  <div class="details-grid">
+    <div class="detail">
+      <div class="detail-value">1004 West Ave</div>
+      <div class="detail-label">Austin, TX 78701</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">(512) 599-9999</div>
+      <div class="detail-label">Main line</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">5.0 Stars</div>
+      <div class="detail-label">352 Google reviews</div>
+    </div>
+    <div class="detail">
+      <div class="detail-value">Free</div>
+      <div class="detail-label">Initial consultation</div>
+    </div>
+  </div>
+  <a class="map-link" href="https://maps.google.com/?q=1004+West+Ave+Austin+TX+78701">Open in Maps</a>
+  <a class="call-link" href="tel:+15125999999">Call The Hull Firm</a>
+</div>
+
+<div class="demo-section">
+  <p>Curious about AI? Try calling our demo receptionist — we built this just to see what's possible.</p>
+  <a class="demo-link" href="tel:+15129420867">(512) 942-0867</a>
+</div>
+
+<div class="footer">
+  Made with care for The Hull Firm
+</div>
+
+</body>
+</html>
